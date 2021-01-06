@@ -33,7 +33,7 @@ class Smsc implements DriverInterface
         $this->login    = $config['login'];
         $this->password = $config['password'];
         $this->sender   = $config['sender'];
-        $this->useSSL   = $config['useSSL'] ?? true);
+        $this->useSSL   = $config['useSSL'] ?? true;
         $default        = [
             'charset' => self::CHARSET_UTF8,
             'fmt'     => self::FMT_JSON
