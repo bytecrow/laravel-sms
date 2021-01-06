@@ -30,15 +30,15 @@ class Smsc implements DriverInterface
      */
     public function __construct(array $config = [])
     {
-        $this->login    = array_get($config, 'login');
-        $this->password = array_get($config, 'password');
-        $this->sender   = array_get($config, 'sender');
-        $this->useSSL   = array_get($config, 'useSSL', true);
+        $this->login    = $config['login'];
+        $this->password = $config['password'];
+        $this->sender   = $config['sender'];
+        $this->useSSL   = $config['useSSL'] ?? true);
         $default        = [
             'charset' => self::CHARSET_UTF8,
             'fmt'     => self::FMT_JSON
         ];
-        $this->options  = array_merge($default, array_get($config, 'options', []));
+        $this->options  = array_merge($default, $config['options'] ?? []);
     }
 
     /**
